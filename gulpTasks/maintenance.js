@@ -12,13 +12,13 @@ const parseJson = require('xml2js').parseString;
 const clientBinaries = require('../clientBinaries.json');
 
 gulp.task('update-nodes', cb => {
-  const clientBinariesGeth = clientBinaries.clients.Geth;
-  const localGethVersion = clientBinariesGeth.version;
+  const clientBinariesGpuffs = clientBinaries.clients.Gpuffs;
+  const localGpuffsVersion = clientBinariesGpuffs.version;
   const newJson = clientBinaries;
-  const geth = newJson.clients.Geth;
+  const gpuffs = newJson.clients.Gpuffs;
 
   // Query latest geth version
-  got('https://api.github.com/repos/ethereum/go-ethereum/releases/latest', {
+  got('https://api.github.com/repos/puffscoin/go-puffscoin/releases/latest', {
     json: true
   })
     .then(response => {
@@ -26,15 +26,15 @@ gulp.task('update-nodes', cb => {
     })
     // Return tag name (e.g. 'v1.5.0')
     .then(tagName => {
-      const latestGethVersion = tagName.match(/\d+\.\d+\.\d+/)[0];
+      const latestGpuffsVersion = tagName.match(/\d+\.\d+\.\d+/)[0];
 
       // Compare to current geth version in clientBinaries.json
-      if (cmp(latestGethVersion, localGethVersion)) {
-        geth.version = latestGethVersion;
+      if (cmp(latestGpuffsVersion, localGpuffsVersion)) {
+        gpuffs.version = latestGpuffsVersion;
 
         // Query commit hash (first 8 characters)
         got(
-          `https://api.github.com/repos/ethereum/go-ethereum/commits/${tagName}`,
+          `https://api.github.com/repos/puffscoin/go-puffscoin/commits/${tagName}`,
           { json: true }
         )
           .then(response => {
@@ -57,28 +57,28 @@ gulp.task('update-nodes', cb => {
                 });
 
                 // For each platform/arch in clientBinaries.json
-                _.keys(geth.platforms).forEach(platform => {
-                  _.keys(geth.platforms[platform]).forEach(arch => {
+                _.keys(gpuffs.platforms).forEach(platform => {
+                  _.keys(gpuffs.platforms[platform]).forEach(arch => {
                     // Update URL
-                    let url = geth.platforms[platform][arch].download.url;
+                    let url = gpuffs.platforms[platform][arch].download.url;
                     url = url.replace(
                       /\d+\.\d+\.\d+-[a-z0-9]{8}/,
-                      `${latestGethVersion}-${hash}`
+                      `${latestGpuffsVersion}-${hash}`
                     );
-                    geth.platforms[platform][arch].download.url = url;
+                    gpuffs.platforms[platform][arch].download.url = url;
 
                     // Update bin name (path in archive)
-                    let bin = geth.platforms[platform][arch].download.bin;
+                    let bin = gpuffs.platforms[platform][arch].download.bin;
                     bin = bin.replace(
                       /\d+\.\d+\.\d+-[a-z0-9]{8}/,
                       `${latestGethVersion}-${hash}`
                     );
-                    geth.platforms[platform][arch].download.bin = bin;
+                    gpuffs.platforms[platform][arch].download.bin = bin;
 
                     // Update expected sanity-command version output
-                    geth.platforms[platform][
+                    gpuffs.platforms[platform][
                       arch
-                    ].commands.sanity.output[1] = String(latestGethVersion);
+                    ].commands.sanity.output[1] = String(latestGpuffsVersion);
 
                     // Update md5 checksum
                     blobs.forEach(blob => {
