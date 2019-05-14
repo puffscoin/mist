@@ -19,11 +19,11 @@ sacha:spin
 chuangbo:cookie
 agnito:simptip
 mrt:jquery-ui-sortable
-ethereum:accounts@1.1.0
-ethereum:tools@1.1.0
-ethereum:elements@1.1.0
-ethereum:web3@1.0.0-beta.33
-ethereum:dapp-styles
+puffscoin:accounts@1.1.0
+puffscoin:tools@1.1.0
+puffscoin:elements@1.1.0
+puffscoin:web3@1.0.0-beta.33
+puffscoin:dapp-styles
 meteor-base@1.4.0
 mobile-experience@1.0.5
 mongo@1.5.0
