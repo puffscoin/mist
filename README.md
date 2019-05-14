@@ -121,7 +121,7 @@ This is useful if you are already running your own node or would like to connect
 $ yarn dev:electron --rpc path/to/gpuffs.ipc
 ```
 
-### Passing options to Geth
+### Passing options to Gpuffs
 
 You can pass command-line options directly to Gpuffs by prefixing them with `--node-` in
 the command-line invocation:
@@ -151,7 +151,7 @@ If you would like to quickly set up a local private network on your computer, ru
 gpuffs --dev
 ```
 
-Look for the IPC path in the resulting geth output, then start Mist with:
+Look for the IPC path in the resulting gpuffs output, then start Mist with:
 
 ```bash
 $ yarn dev:electron --rpc path/to/gpuffs.ipc
