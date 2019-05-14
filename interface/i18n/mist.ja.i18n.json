@@ -146,9 +146,9 @@
     "startScreen": {
       "runningNodeFound": "起動している Ethereum ノードを見つけました!",
       "nodeConnectionTimeout":
-        "Ethereum ノードをスタート出来ませんでした!<br><small>もし<a href='https://www.ethereum.org/cli#geth' class='button' target='_blank'>Geth</a>をインストールしているならば,このコマンドを使ってみてください: <br> <code>geth --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'>もしくは問題を報告して下さい。 </a></small>",
+        "Ethereum ノードをスタート出来ませんでした!<br><small>もし<a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>gpuffs</a>をインストールしているならば,このコマンドを使ってみてください: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'>もしくは問題を報告して下さい。 </a></small>",
       "nodeBinaryNotFound":
-        "Ethereum ノードバイナリーが見つかりませんでした。<br><small> <a href='https://www.ethereum.org/cli#geth' class='button' target='_blank'> 手動でスタートして下さい。 </a> </small>",
+        "Ethereum ノードバイナリーが見つかりませんでした。<br><small> <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'> 手動でスタートして下さい。 </a> </small>",
       "nodeSyncing": "Ethereum ノードは同期中です...",
       "nodeSyncInfo":
         "ブロックをダウンロードしています。 __displayBlock__ / __highestBlock__.",
