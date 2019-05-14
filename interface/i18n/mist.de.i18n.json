@@ -6,7 +6,7 @@
         "about": "Über __app__",
         "checkForUpdates": "Nach Aktualisierungen suchen...",
         "checkForNodeUpdates":
-          "Nach Ethereum Softwareknoten Aktualisierungen suchen...",
+          "Nach puffscoin Softwareknoten Aktualisierungen suchen...",
         "services": "Dienste",
         "hide": "__app__ ausblenden",
         "hideOthers": "Andere ausblenden",
@@ -45,7 +45,7 @@
         "runTests": "Tests durchführen",
         "logFiles": "Logdatei anzeigen",
         "openRemix": "Remix IDE öffnen",
-        "ethereumNode": "Ethereum Softwareknoten",
+        "puffscoinNode": "puffscoin Softwareknoten",
         "network": "Netzwerk",
         "mainNetwork": "Hauptnetzwerk",
         "startMining": "⛏ Mining starten",
@@ -70,7 +70,7 @@
       "timeSync": {
         "title": "Deine Computeruhr ist nicht synchronisiert!",
         "description":
-          "Um mit dem Ethereum-Netzwerk zu synchronisieren muss deine Computeruhr mit einem Zeitserver synchronisiert werden.",
+          "Um mit dem puffscoin-Netzwerk zu synchronisieren muss deine Computeruhr mit einem Zeitserver synchronisiert werden.",
         "win32":
           "Gehe dazu in deine Internet Zeit Einstellungen in deinen System Einstellungen and checke die Box. Siehe diese Anleitung für Details: http://www.guidingtech.com/3119/windows-clock-sync/",
         "linux":
@@ -87,7 +87,7 @@
       "legacyChain": {
         "title": "Veraltete Chain erkannt",
         "description":
-          "Dein Softwareknoten ist zur Zeit auf der nicht unterstützten Ethereum Classic Chain. Um diese Chain zu nutzen, verwende die Tools vom Ethereum Classic Project unter\nhttps://ethereumclassic.github.io.\n\nUm zur Hauptchain von Ethereum zurückzukehren, folge den Schritten in diesem Tutorial:\nhttps://github.com/ethereum/mist/releases/0.8.2"
+          "Dein Softwareknoten ist zur Zeit auf der nicht unterstützten  Classic Chain. Um diese Chain zu nutzen, verwende die Tools vom Ethereum Classic Project unter\nhttps://.github.io.\n\nUm zur Hauptchain von  zurückzukehren, folge den Schritten in diesem Tutorial:\nhttps://github.com//mist/releases/0.8.2"
       }
     },
     "rightClick": {
@@ -127,7 +127,7 @@
       "privateNetwork": "Privates Netzwerk",
       "test": "test",
       "testnetExplain":
-        "Du bist mit dem Testnetz verbunden, SENDE KEINE echten Ether an diese Adressen",
+        "Du bist mit dem Testnetz verbunden, SENDE KEINE echten puffscoin an diese Adressen",
       "timeSinceBlock": "Abgelaufene Zeit seit dem letzten Block"
     },
     "sidebar": {
@@ -142,22 +142,22 @@
       }
     },
     "startScreen": {
-      "runningNodeFound": "Laufender Ethereum Softwareknoten gefunden!",
+      "runningNodeFound": "Laufender puffscoin Softwareknoten gefunden!",
       "nodeConnectionTimeout":
-        "Ethereum Softwareknoten konnte nicht gestartet werden!<br><small>Wenn du <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>gpuffs installiert hast,</a>, verwende bitte diesen Befehl, um gpuffs zu starten: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'>oder sende einen Fehlerreport</a></small>",
+        "puffscoin Softwareknoten konnte nicht gestartet werden!<br><small>Wenn du <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>gpuffs installiert hast,</a>, verwende bitte diesen Befehl, um gpuffs zu starten: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/puffscoin/mist/issues' class='button' target='_blank'>oder sende einen Fehlerreport</a></small>",
       "nodeBinaryNotFound":
-        "Keine Programmdatei für den Ethereum Softwareknoten gefunden!<br><small> <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'> Bitte starte den Ethereum Softwareknoten manuell. </a> </small>",
+        "Keine Programmdatei für den puffscoin Softwareknoten gefunden!<br><small> <a href='https://www.puffscoin.org/cli#gpuffs' class='button' target='_blank'> Bitte starte den puffscoin Softwareknoten manuell. </a> </small>",
       "nodeSyncing":
         "Ethereum Softwareknoten muss synchronisieren, bitte warten...",
       "nodeSyncInfo":
         "Block __displayBlock__ von __highestBlock__ wird heruntergeladen.",
       "nodeSyncConnecting": "Suche nach Peers...",
-      "nodeStarting": "Ethereum Softwareknoten startet...",
-      "nodeStarted": "Ethereum Softwareknoten gestartet",
-      "nodeConnected": "Ethereum Softwareknoten verbunden",
-      "nodeStopping": "Ethereum Softwareknoten stoppt...",
-      "nodeStopped": "Ethereum Softwareknoten gestoppt",
-      "nodeError": "Verbindungsproblem zum Ethereum Softwareknoten :'(",
+      "nodeStarting": "puffscoin Softwareknoten startet...",
+      "nodeStarted": "puffscoin Softwareknoten gestartet",
+      "nodeConnected": "puffscoin Softwareknoten verbunden",
+      "nodeStopping": "puffscoin Softwareknoten stoppt...",
+      "nodeStopped": "puffscoin Softwareknoten gestoppt",
+      "nodeError": "Verbindungsproblem zum puffscoin Softwareknoten :'(",
       "unableToBindPort":
         "Ethereum Softwareknoten kann nicht gestartet werden. Läuft bereits eine andere Instanz?",
       "nodeSyncInfoStates":
@@ -169,8 +169,8 @@
         "downloading": "Lade neue Softwareknoten-Version herunter...",
         "loadConfig": "Lade Softwareknoten Konfiguration...",
         "filtering": "Filtering client binaries...",
-        "done": "Ethereum Softwareknoten aktuell...",
-        "error": "Ethereum Softwareknoten konnte nicht gestartet werden."
+        "done": "puffscoin Softwareknoten aktuell...",
+        "error": "puffscoin Softwareknoten konnte nicht gestartet werden."
       }
     },
     "popupWindows": {
@@ -189,7 +189,7 @@
       "importAccount": {
         "doYouHaveAWalletFile": "Hast du eine Wallet-Datei?",
         "walletFileDescription":
-          "<p>Wallet-Datei zum importieren in dieses Fenster ziehen.<br>Wenn du 2014 am Ethereum-Pre-sale teilgenommen hast, solltest du über eine Datei mit dem Dateinamen <code>ethereum_wallet_backup.json</code> verfügen. Sie wurde nach dem Kauf heruntergeladen und dir auch per E-Mail geschickt.</p>",
+          "<p>Wallet-Datei zum importieren in dieses Fenster ziehen.</p>",
         "dropFilesHere": "Pre-sale Datei laden",
         "importing": "Importieren...",
         "buttons": {
