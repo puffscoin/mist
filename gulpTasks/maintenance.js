@@ -17,7 +17,7 @@ gulp.task('update-nodes', cb => {
   const newJson = clientBinaries;
   const gpuffs = newJson.clients.Gpuffs;
 
-  // Query latest geth version
+  // Query latest gpuffs version
   got('https://api.github.com/repos/puffscoin/go-puffscoin/releases/latest', {
     json: true
   })
@@ -28,7 +28,7 @@ gulp.task('update-nodes', cb => {
     .then(tagName => {
       const latestGpuffsVersion = tagName.match(/\d+\.\d+\.\d+/)[0];
 
-      // Compare to current geth version in clientBinaries.json
+      // Compare to current gpuffs version in clientBinaries.json
       if (cmp(latestGpuffsVersion, localGpuffsVersion)) {
         gpuffs.version = latestGpuffsVersion;
 
@@ -71,7 +71,7 @@ gulp.task('update-nodes', cb => {
                     let bin = gpuffs.platforms[platform][arch].download.bin;
                     bin = bin.replace(
                       /\d+\.\d+\.\d+-[a-z0-9]{8}/,
-                      `${latestGethVersion}-${hash}`
+                      `${latestGpuffsVersion}-${hash}`
                     );
                     gpuffs.platforms[platform][arch].download.bin = bin;
 
@@ -85,7 +85,7 @@ gulp.task('update-nodes', cb => {
                       if (
                         String(blob.Name) ===
                         _.last(
-                          geth.platforms[platform][arch].download.url.split('/')
+                          gpuffs.platforms[platform][arch].download.url.split('/')
                         )
                       ) {
                         const sum = Buffer.from(
@@ -93,7 +93,7 @@ gulp.task('update-nodes', cb => {
                           'base64'
                         );
 
-                        geth.platforms[platform][
+                        gpuffs.platforms[platform][
                           arch
                         ].download.md5 = sum.toString('hex');
                       }
