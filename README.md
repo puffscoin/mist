@@ -1,4 +1,4 @@
-# Mist Browser [Deprecated]
+# Mist Browser for PUFFScoin
 
 [![Github All Releases](https://img.shields.io/github/downloads/ethereum/mist/total.svg)](http://www.somsubhra.com/github-release-stats/?username=ethereum&repository=mist)
 [![Build Status develop branch](https://travis-ci.org/ethereum/mist.svg?branch=develop)](https://travis-ci.org/ethereum/mist)
@@ -139,7 +139,7 @@ You can pass command-line options directly to Geth by prefixing them with `--nod
 the command-line invocation:
 
 ```bash
-$ yarn dev:electron --mode mist --node-rpcport 19343 --node-networkid 2
+$ yarn dev:electron --mode mist --node-rpcport 11364 --node-networkid 420
 ```
 
 The `--rpc` Mist option is a special case. If you set this to an IPC socket file
