@@ -145,7 +145,7 @@ exports.mocha = (_module, options) => {
       }
 
       this.web3 = new Web3(
-        new Web3.providers.HttpProvider('http://localhost:58545')
+        new Web3.providers.HttpProvider('http://localhost:11363')
       );
       this.app = new Application({
         requireName: 'electronRequire',
