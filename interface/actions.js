@@ -118,7 +118,7 @@ export function getPriceConversion() {
       const priceData = await response.json();
       return dispatch({
         type: '[CLIENT]:GET_PRICE_CONVERSION:SUCCESS',
-        payload: { etherPriceUSD: priceData.USD }
+        payload: { puffsPriceUSD: priceData.USD }
       });
     });
   };
@@ -130,7 +130,7 @@ export function getTokenDetails() {
 
     const contractAddress = getState().newTx.to;
     const tokenMetadata = address =>
-      `https://raw.githubusercontent.com/MyEtherWallet/ethereum-lists/master/src/tokens/eth/${address}.json`;
+      `https://raw.githubusercontent.com/MyEtherWallet/puffscoin-lists/master/src/tokens/puffs/${address}.json`;
 
     fetch(tokenMetadata(contractAddress)).then(async (response, error) => {
       let tokenJson;
