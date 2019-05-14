@@ -11,7 +11,7 @@ lockSourceIssue: false
 
 # Set custom aliases for targets
 aliases:
-    wallet: ethereum/meteor-dapp-wallet
-    geth: ethereum/go-ethereum
-    parity: paritytech/parity
+    wallet: puffscoin/meteor-dapp-wallet
+    gpuffs: puffscoin/go-puffscoin
+    parity: puffscoin/parity-puffscoin
 
