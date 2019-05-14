@@ -13,5 +13,5 @@ rules:
 globals:
   Helpers: true
   Blaze: true
-  EthAccounts: true
+  PuffsAccounts: true
   mist: true
