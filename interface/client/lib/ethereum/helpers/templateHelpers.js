@@ -26,7 +26,7 @@ Returns the current block
 @method (CurrentBlock)
 **/
 Template.registerHelper('CurrentBlock', function() {
-  return EthBlocks.latest;
+  return PuffsBlocks.latest;
 });
 
 /**
@@ -82,7 +82,7 @@ Get all accounts
 @method (accounts)
 **/
 Template.registerHelper('accounts', function(identity) {
-  return EthAccounts.find({}, { sort: { name: 1 } });
+  return PuffsAccounts.find({}, { sort: { name: 1 } });
 });
 
 /**
