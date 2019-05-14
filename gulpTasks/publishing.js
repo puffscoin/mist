@@ -49,7 +49,7 @@ gulp.task('upload-binaries', cb => {
   console.info('Checking Github releases...');
   // query github releases
   got(
-    `https://api.github.com/repos/ethereum/mist/releases?access_token=${GITHUB_TOKEN}`,
+    `https://api.github.com/repos/puffscoin/mist/releases?access_token=${GITHUB_TOKEN}`,
     { json: true }
   )
     // filter draft with current version's tag
@@ -89,7 +89,7 @@ gulp.task('upload-binaries', cb => {
 
         return (
           githubUpload({
-            url: `https://uploads.github.com/repos/ethereum/mist/releases/${
+            url: `https://uploads.github.com/repos/puffscoin/mist/releases/${
               draft.id
             }/assets{?name}`,
             token: [GITHUB_TOKEN],
@@ -114,7 +114,7 @@ gulp.task('upload-binaries', cb => {
                   })
                   .join('\n');
                 got.patch(
-                  `https://api.github.com/repos/ethereum/mist/releases/${
+                  `https://api.github.com/repos/puffscoin/mist/releases/${
                     draft.id
                   }?access_token=${GITHUB_TOKEN}`,
                   {
