@@ -13,17 +13,17 @@ class ContextDescription extends Component {
   }
 
   formattedBalance() {
-    return EthTools.formatBalance(
+    return PuffsTools.formatBalance(
       web3.utils.toBN(this.props.value || 0),
       '0,0.00[0000000000000000]',
-      'ether'
+      'puffs'
     );
   }
 
   calculateTransferValue() {
-    const { value, etherPriceUSD } = this.props;
+    const { value, puffsPriceUSD } = this.props;
 
-    if (!value || !etherPriceUSD) {
+    if (!value || !puffsPriceUSD) {
       return;
     }
 
@@ -31,18 +31,18 @@ class ContextDescription extends Component {
       ? new BigNumber(web3.utils.hexToNumberString(value))
       : new BigNumber(value);
     const fee = bigValue
-      .times(etherPriceUSD)
+      .times(puffsPriceUSD)
       .dividedBy(new BigNumber('1000000000000000000'));
     return this.formatter.format(fee);
   }
 
-  alertIfSendingEther() {
+  alertIfSendingPuffs() {
     if (!this.props.value || parseInt(this.props.value, 16) === 0) return null;
 
     return (
-      <div className="context-description__send-eth-alert">
-        Ether Amount:{' '}
-        <span className="bold">{this.formattedBalance()} ETH</span>
+      <div className="context-description__send-puffs-alert">
+        Puffs Amount:{' '}
+        <span className="bold">{this.formattedBalance()} PUFFS</span>
       </div>
     );
   }
@@ -56,7 +56,7 @@ class ContextDescription extends Component {
         return 'genericFunctionExecution';
       }
     }
-    return 'etherTransfer';
+    return 'puffsTransfer';
   }
 
   renderNewContractDescription() {
