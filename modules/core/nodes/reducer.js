@@ -8,7 +8,7 @@ export const initialState = {
     timestamp: 0
   },
   local: {
-    client: 'geth',
+    client: 'gpuffs',
     blockNumber: 0,
     timestamp: 0,
     peerCount: 0,
