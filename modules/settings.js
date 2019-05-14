@@ -116,12 +116,12 @@ class Settings {
     return argv.swarmurl;
   }
 
-  get gethPath() {
-    return argv.gethpath;
+  get gpuffsPath() {
+    return argv.gpuffspath;
   }
 
-  get ethPath() {
-    return argv.ethpath;
+  get puffsPath() {
+    return argv.puffspath;
   }
 
   get rpcMode() {
@@ -161,15 +161,15 @@ class Settings {
     ipcPath = this.userHomePath;
 
     if (process.platform === 'darwin') {
-      ipcPath += '/Library/Ethereum/geth.ipc';
+      ipcPath += '/Library/Ethereum/gpuffs.ipc';
     } else if (
       process.platform === 'freebsd' ||
       process.platform === 'linux' ||
       process.platform === 'sunos'
     ) {
-      ipcPath += '/.ethereum/geth.ipc';
+      ipcPath += '/.ethereum/gpuffs.ipc';
     } else if (process.platform === 'win32') {
-      ipcPath = '\\\\.\\pipe\\geth.ipc';
+      ipcPath = '\\\\.\\pipe\\gpuffs.ipc';
     }
 
     settingsLog.debug(`IPC path: ${ipcPath}`);
@@ -350,7 +350,7 @@ const argv = require('yargs')
     node: {
       demand: false,
       default: null,
-      describe: 'Node to use: geth, eth',
+      describe: 'Node to use: gpuffs, puffs',
       requiresArg: true,
       nargs: 1,
       type: 'string',
@@ -391,9 +391,9 @@ const argv = require('yargs')
       type: 'string',
       group: 'Mist options:'
     },
-    gethpath: {
+    gpuffspath: {
       demand: false,
-      describe: 'Path to Geth executable to use instead of default.',
+      describe: 'Path to gpuffs executable to use instead of default.',
       requiresArg: true,
       nargs: 1,
       type: 'string',
@@ -436,7 +436,7 @@ const argv = require('yargs')
     syncmode: {
       demand: false,
       requiresArg: true,
-      describe: 'Geth synchronization mode: [fast|light|full|nosync]',
+      describe: 'gpuffs synchronization mode: [fast|light|full|nosync]',
       nargs: 1,
       type: 'string',
       group: 'Mist options:'
@@ -461,7 +461,7 @@ const argv = require('yargs')
     },
     '': {
       describe:
-        'To pass options to the underlying node (e.g. Geth) use the --node- prefix, e.g. --node-datadir',
+        'To pass options to the underlying node (e.g. gpuffs) use the --node- prefix, e.g. --node-datadir',
       group: 'Node options:'
     }
   })
