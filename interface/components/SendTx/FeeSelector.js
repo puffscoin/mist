@@ -52,21 +52,21 @@ class FeeSelector extends Component {
       gasPriceGweiStandard,
       gasPriceGweiPriority,
       network,
-      etherPriceUSD
+      puffsPriceUSD
     } = this.props;
 
     if (!this.props.priority) {
       const priceInWei = new BigNumber(gasPriceGweiStandard).times(1000000000);
-      const etherFee = priceInWei
+      const puffsFee = priceInWei
         .times(estimatedGas)
         .dividedBy(new BigNumber('1000000000000000000'));
 
-      if (network.toLowerCase() === 'main' && etherPriceUSD) {
-        const standardFee = etherFee.times(etherPriceUSD);
+      if (network.toLowerCase() === 'main' && puffsPriceUSD) {
+        const standardFee = puffsFee.times(puffsPriceUSD);
         const formattedFee = this.formatter.format(standardFee);
-        return `${formattedFee} USD (${etherFee} ETH)`;
+        return `${formattedFee} USD (${puffsFee} PUFFS)`;
       } else {
-        return `${etherFee} ETH`;
+        return `${puffsFee} PUFFS`;
       }
     }
 
@@ -77,12 +77,12 @@ class FeeSelector extends Component {
       .times(estimatedGas)
       .dividedBy(new BigNumber('1000000000000000000'));
 
-    if (network.toLowerCase() === 'main' && etherPriceUSD) {
-      const standardFee = etherFee.times(etherPriceUSD);
+    if (network.toLowerCase() === 'main' && puffsPriceUSD) {
+      const standardFee = puffsFee.times(puffsPriceUSD);
       const formattedFee = this.formatter.format(standardFee);
-      return `${formattedFee} USD (${etherFee} ETH)`;
+      return `${formattedFee} USD (${puffsFee} PUFFS)`;
     } else {
-      return `${etherFee} ETH`;
+      return `${etherFee} PUFFS`;
     }
   }
 
