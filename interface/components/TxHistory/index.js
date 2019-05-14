@@ -90,7 +90,7 @@ class TxHistory extends Component {
           tx={tx}
           key={tx.hash}
           networkString={this.networkString}
-          etherPriceUSD={this.props.settings.etherPriceUSD}
+          puffsPriceUSD={this.props.settings.puffsPriceUSD}
         />
       );
     });
