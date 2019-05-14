@@ -49,8 +49,8 @@ const startGeth = function*() {
       extraData: '0x01'
     },
     gethOptions: {
-      port: 58546,
-      rpcport: 58545
+      port: 11364,
+      rpcport: 11363
     }
   });
 
