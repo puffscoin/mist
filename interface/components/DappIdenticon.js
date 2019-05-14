@@ -11,7 +11,7 @@ const { hqx } = mod;
 
 // copied from https://github.com/ethereum/blockies/blob/master/react-component.js
 // see also https://github.com/alexvandesande/meteor-identicon/blob/master/lib/identicon.js
-// https://github.com/ethereum/meteor-package-elements/blob/master/identicon.html
+// https://github.com/puffscoin/meteor-package-elements/blob/master/identicon.html
 export default class DappIdenticon extends Component {
   constructor(props) {
     super(props);
