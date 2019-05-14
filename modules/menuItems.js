@@ -288,7 +288,7 @@ let menuTempl = function(webviews) {
                   userPath += '/.web3/keys';
                 }
 
-                // geth
+                // gpuffs
               } else {
                 if (process.platform === 'darwin') {
                   userPath += '/Library/Ethereum/keystore';
@@ -524,13 +524,13 @@ let menuTempl = function(webviews) {
   if (process.platform === 'darwin' || process.platform === 'win32') {
     const nodeSubmenu = [];
 
-    const ethClient = ClientBinaryManager.getClient('eth');
-    const gethClient = ClientBinaryManager.getClient('geth');
+    const puffsClient = ClientBinaryManager.getClient('puffs');
+    const gpuffsClient = ClientBinaryManager.getClient('gpuffs');
 
     if (gethClient) {
       nodeSubmenu.push({
-        label: `Geth ${gethClient.version}`,
-        checked: ethereumNode.isOwnNode && ethereumNode.isGeth,
+        label: `Gpuffs ${gethClient.version}`,
+        checked: ethereumNode.isOwnNode && ethereumNode.isGpuffs,
         enabled: ethereumNode.isOwnNode,
         type: 'checkbox',
         click() {
@@ -541,13 +541,13 @@ let menuTempl = function(webviews) {
 
     if (ethClient) {
       nodeSubmenu.push({
-        label: `Eth ${ethClient.version} (C++)`,
-        checked: ethereumNode.isOwnNode && ethereumNode.isEth,
+        label: `Puffs ${ethClient.version} (C++)`,
+        checked: ethereumNode.isOwnNode && ethereumNode.isPuffs,
         enabled: ethereumNode.isOwnNode,
         // enabled: false,
         type: 'checkbox',
         click() {
-          restartNode('eth');
+          restartNode('pufs');
         }
       });
     }
