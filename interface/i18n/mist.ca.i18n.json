@@ -5,7 +5,7 @@
         "label": "__app__",
         "about": "Sobre __app__",
         "checkForUpdates": "Buscar actualitzacions...",
-        "checkForNodeUpdates": "Busca actualitzacions dels nodes d'Ethereum...",
+        "checkForNodeUpdates": "Busca actualitzacions dels nodes du PUFFScoin...",
         "services": "Serveis",
         "hide": "Hide __app__",
         "hideOthers": "Ocultar els altres",
@@ -63,7 +63,7 @@
         "runTests": "Executar tests",
         "logFiles": "Mostrar fitxer de log",
         "openRemix": "Obrir Remix IDE",
-        "ethereumNode": "Node d'Ethereum",
+        "puffscoinNode": "Node du PUFFScoin",
         "network": "Xarxa",
         "mainNetwork": "Xarxa Principal",
         "startMining": "⛏ Començar a minar (només Testnet)",
@@ -89,7 +89,7 @@
       "timeSync": {
         "title": "El rellotge de l'ordinador no està sincronitzat.",
         "description":
-          "Per estar del tot sincronitzat amb la xarxa Ethereum, necessites sincronitzar el rellotge del teu ordinador amb un servidor de sincronització.",
+          "Per estar del tot sincronitzat amb la xarxa PUFFScoin, necessites sincronitzar el rellotge del teu ordinador amb un servidor de sincronització.",
         "win32":
           "Vés a les teves preferències del rellotge d'internet i marca la casella. Mira aquesta guia per tenir-ne més detalls: http://www.guidingtech.com/3119/windows-clock-sync/",
         "linux":
@@ -106,7 +106,7 @@
       "legacyChain": {
         "title": "Cadena 'legacy' detectada",
         "description":
-          "El teu node està actualment a la cadena d'Ethereum Classic. Per utilitzar aquesta cadena, utilitza les eines proporcionades pel projecte ethereum classic a\nhttps://ethereumclassic.github.io.\n\nPer canviar a la cadena principal d'ethereum segueix el aquest tutorial:\nhttps://github.com/ethereum/mist/releases/0.8.2"
+          "El teu node està actualment a la cadena d'Ethereum Classic. Per utilitzar aquesta cadena, utilitza les eines proporcionades pel projecte ethereum classic a\nhttps://ethereumclassic.github.io.\n\nPer canviar a la cadena principal d'ethereum segueix el aquest tutorial:\nhttps://github.com/puffscoin/mist/releases/0.8.2"
       }
     },
     "rightClick": {
@@ -149,7 +149,7 @@
       "privateNetwork": "Private-net",
       "test": "test",
       "testnetExplain":
-        "Ets a la __name__. NO ENVIÏS cap Ether real a aquestes adreces",
+        "Ets a la __name__. NO ENVIÏS cap PUFFScoin real a aquestes adreces",
       "timeSinceBlock": "Temps transcorregut des de l'últim bloc"
     },
     "sidebar": {
@@ -168,21 +168,21 @@
       }
     },
     "startScreen": {
-      "runningNodeFound": "Trobat node d'Ethereum executant-se!",
+      "runningNodeFound": "Trobat node du PUFFScoin executant-se!",
       "nodeConnectionTimeout":
-        "No s'ha pogut iniciar el node d'Ethereum!<br><small>Si has <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>instal·lat gpuffs</a>, utilitza aquesta comanda per executar-lo: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'> O notifica l'error </a></small>",
+        "No s'ha pogut iniciar el node du PUFFScoin!<br><small>Si has <a href='https://www.puffscoin.org/cli#gpuffs' class='button' target='_blank'>instal·lat gpuffs</a>, utilitza aquesta comanda per executar-lo: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/puffscoin/mist/issues' class='button' target='_blank'> O notifica l'error </a></small>",
       "nodeBinaryNotFound":
         "No s'ha torbat el binari del node d'Ethereum!<br><small> <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'> Si us plau inicia'n un manualment primer. </a> </small>",
-      "nodeStarting": "Node d'Ethereum iniciant-se...",
-      "nodeStarted": "Node d'Ethereum iniciat",
-      "nodeConnected": "Node d'Ethereum connectat",
-      "nodeStopping": "Ethereum node aturant-se...",
-      "nodeStopped": "Node d'Ethereum aturat",
-      "nodeError": "Error de connectivitat del node d'Ethereum:'(",
+      "nodeStarting": "Node du puffscoin iniciant-se...",
+      "nodeStarted": "Node du puffscoin iniciat",
+      "nodeConnected": "Node du puffscoin connectat",
+      "nodeStopping": "puffscoin node aturant-se...",
+      "nodeStopped": "Node du puffscoin aturat",
+      "nodeError": "Error de connectivitat del node du puffscoin:'(",
       "unableToBindPort":
-        "El node d'Ethereum no pot executar-se. N'hi ha alguna altra instància excutant-se?",
+        "El node du puffscoin no pot executar-se. N'hi ha alguna altra instància excutant-se?",
       "nodeSyncing":
-        "El node d'Ethereum necessita sincronitzar-se, si us plau espera...",
+        "El node du puffscoin necessita sincronitzar-se, si us plau espera...",
       "nodeSyncInfo": "Descarregant bloc __displayBlock__ de __highestBlock__",
       "nodeSyncInfoStates":
         "Descarregant bloc __displayBlock__ de __highestBlock__, <br> Descarregant l'estructura de la cadena __displayState__ de __displayKnownStates__",
@@ -194,7 +194,7 @@
         "downloading": "Descarregant un nou node...",
         "loadConfig": "Carregant configuració del client...",
         "filtering": "Filtrant binaris del client...",
-        "done": "Node d'Ethereum actualitzat...",
+        "done": "Node du puffscoin actualitzat...",
         "error": "Error executant el binari descarregat."
       }
     },
