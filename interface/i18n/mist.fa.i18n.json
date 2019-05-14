@@ -145,9 +145,9 @@
     "startScreen": {
       "runningNodeFound": "Found running Ethereum node!",
       "nodeConnectionTimeout":
-        "Couldn't start Ethereum node!<br><small>If you <a href='https://www.ethereum.org/cli#geth' class='button' target='_blank'>installed Geth</a>, use this command to run it: <br> <code>geth --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'> Or report an issue </a></small>",
+        "Couldn't start Ethereum node!<br><small>If you <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>installed gpuffs</a>, use this command to run it: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'> Or report an issue </a></small>",
       "nodeBinaryNotFound":
-        "No Ethereum node binary found!<br><small> <a href='https://www.ethereum.org/cli#geth' class='button' target='_blank'> Please start one manually before. </a> </small>",
+        "No Ethereum node binary found!<br><small> <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'> Please start one manually before. </a> </small>",
       "nodeStarting": "Ethereum node starting up...",
       "nodeStarted": "Ethereum node started",
       "nodeConnected": "Ethereum node connected",
