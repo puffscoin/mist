@@ -6,7 +6,7 @@ const fs = require('fs');
 const Web3 = require('web3');
 const shell = require('shelljs');
 const path = require('path');
-const gethPrivate = require('geth-private');
+const gpuffsPrivate = require('gpuffs-private');
 const Application = require('spectron').Application;
 const chai = require('chai');
 const http = require('http');
@@ -21,8 +21,8 @@ process.env.TEST_MODE = 'true';
 
 const log = logger.create('base');
 
-const startGeth = function*() {
-  let gethPath;
+const startGpuffs = function*() {
+  let gpuffsPath;
 
   const config = JSON.parse(
     fs.readFileSync(path.join('clientBinaries.json')).toString()
@@ -30,20 +30,20 @@ const startGeth = function*() {
   const manager = new ClientBinaryManager(config);
   yield manager.init();
 
-  if (!manager.clients.Geth.state.available) {
-    gethPath = manager.clients.Geth.activeCli.fullPath;
-    console.info('Downloading geth...');
-    const downloadedGeth = yield manager.download('Geth');
-    gethPath = downloadedGeth.client.activeCli.fullPath;
-    console.info('Geth downloaded at:', gethPath);
+  if (!manager.clients.Gpuffs.state.available) {
+    gpuffsPath = manager.clients.Gpuffs.activeCli.fullPath;
+    console.info('Downloading gpuffs...');
+    const downloadedGpuffs = yield manager.download('Gpuffs');
+    gpuffsPath = downloadedGpuffs.client.activeCli.fullPath;
+    console.info('Gpuffs downloaded at:', gpuffsPath);
   }
 
-  const geth = gethPrivate({
-    gethPath,
+  const gpuffs = gpuffsPrivate({
+    gpuffsPath,
     balance: 5,
     genesisBlock: {
       config: {
-        chainId: 33333
+        chainId: 420
       },
       difficulty: '0x01',
       extraData: '0x01'
@@ -54,11 +54,11 @@ const startGeth = function*() {
     }
   });
 
-  console.info('Geth starting...');
+  console.info('Gpuffs starting...');
   yield geth.start();
-  console.info('Geth started');
+  console.info('Gpuffs started');
 
-  return geth;
+  return gpuffs;
 };
 
 const startFixtureServer = function(serverPort) {
