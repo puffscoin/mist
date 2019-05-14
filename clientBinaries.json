@@ -1,6 +1,6 @@
 {
   "clients": {
-    "Geth": {
+    "Gpuffs": {
       "version": "1.8.20",
       "platforms": {
         "linux": {
