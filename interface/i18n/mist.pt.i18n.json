@@ -144,9 +144,9 @@
     "startScreen": {
       "runningNodeFound": "Node Ethereum encontrado!",
       "nodeConnectionTimeout":
-        "Não pode inicializar um Node!<br><small> Instale <a href='https://www.ethereum.org/cli#geth' class='button' target='_blank'>um manualmente</a>, e use esse comando para executa-lo: <br> <code>geth --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'> Caso não consiga, entre em contato </a></small>",
+        "Não pode inicializar um Node!<br><small> Instale <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>um manualmente</a>, e use esse comando para executa-lo: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'> Caso não consiga, entre em contato </a></small>",
       "nodeBinaryNotFound":
-        "Nó não encontrado!<br><small><a href='https://www.ethereum.org/cli#geth' class='button' target='_blank'>Instale um manualmente</a></small>",
+        "Nó não encontrado!<br><small><a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>Instale um manualmente</a></small>",
       "nodeSyncing": "Sincronizando, favor aguarde...",
       "nodeSyncInfoStates":
         "Carregando bloco __displayBlock__ de __highestBlock__, <br> Lendo estrutura __displayState__ de __displayKnownStates__",
