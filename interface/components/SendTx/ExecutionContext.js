@@ -12,10 +12,10 @@ class ExecutionContext extends Component {
   }
 
   formattedBalance() {
-    return EthTools.formatBalance(
+    return PuffsTools.formatBalance(
       web3.utils.toBN(this.props.value || 0),
       '0,0.00[0000000000000000]',
-      'ether'
+      'puffs'
     );
   }
 
@@ -112,7 +112,7 @@ class ExecutionContext extends Component {
 
         <div className="execution-context__details-row">
           <span className="execution-context__details-title">
-            {i18n.t('mist.sendTx.etherAmount')}
+            {i18n.t('mist.sendTx.puffsAmount')}
           </span>
           <span className="execution-context__details-value">
             {this.formattedBalance(value)}
