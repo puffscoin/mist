@@ -47,7 +47,7 @@ class Manager extends EventEmitter {
   }
 
   _checkForNewConfig(restart) {
-    const nodeType = 'Geth';
+    const nodeType = 'Gpuffs';
     let binariesDownloaded = false;
     let nodeInfo;
 
@@ -212,8 +212,8 @@ class Manager extends EventEmitter {
         return mgr
           .init({
             folders: [
-              path.join(Settings.userDataPath, 'binaries', 'Geth', 'unpacked'),
-              path.join(Settings.userDataPath, 'binaries', 'Eth', 'unpacked')
+              path.join(Settings.userDataPath, 'binaries', 'Gpuffs', 'unpacked'),
+              path.join(Settings.userDataPath, 'binaries', 'Puffs', 'unpacked')
             ]
           })
           .then(() => {
