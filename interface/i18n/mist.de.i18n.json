@@ -144,7 +144,7 @@
     "startScreen": {
       "runningNodeFound": "Laufender Ethereum Softwareknoten gefunden!",
       "nodeConnectionTimeout":
-        "Ethereum Softwareknoten konnte nicht gestartet werden!<br><small>Wenn du <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>gpuffs installiert hast,</a>, verwende bitte diesen Befehl, um Geth zu starten: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'>oder sende einen Fehlerreport</a></small>",
+        "Ethereum Softwareknoten konnte nicht gestartet werden!<br><small>Wenn du <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'>gpuffs installiert hast,</a>, verwende bitte diesen Befehl, um gpuffs zu starten: <br> <code>gpuffs --ipcpath __path__</code></small><br> <small><a href='https://github.com/ethereum/mist/issues' class='button' target='_blank'>oder sende einen Fehlerreport</a></small>",
       "nodeBinaryNotFound":
         "Keine Programmdatei für den Ethereum Softwareknoten gefunden!<br><small> <a href='https://www.ethereum.org/cli#gpuffs' class='button' target='_blank'> Bitte starte den Ethereum Softwareknoten manuell. </a> </small>",
       "nodeSyncing":
