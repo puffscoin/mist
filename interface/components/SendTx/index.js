@@ -143,7 +143,7 @@ class SendTx extends Component {
             gasPriceGweiPriority={this.props.newTx.gasPriceGweiPriority}
             getGasPrice={this.getGasPrice}
             getGasUsage={this.estimateGasUsage}
-            etherPriceUSD={this.props.etherPriceUSD}
+            etherPriceUSD={this.props.puffsPriceUSD}
             network={this.props.network}
             priority={this.props.newTx.priority}
             togglePriority={this.togglePriority}
@@ -164,7 +164,7 @@ class SendTx extends Component {
 
 function mapStateToProps(state) {
   return {
-    etherPriceUSD: state.settings.etherPriceUSD,
+    puffsPriceUSD: state.settings.puffsPriceUSD,
     network: state.nodes.network,
     newTx: state.newTx
   };
