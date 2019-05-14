@@ -9,14 +9,14 @@ class TxRow extends Component {
     this.state = { showDetails: false };
   }
 
-  valueToEtherAmount = value => {
+  valueToPuffsAmount = value => {
     const theValue = web3.utils.isHex(value)
       ? new BigNumber(web3.utils.hexToNumberString(value))
       : new BigNumber(value || 0);
-    const etherAmount = theValue
+    const puffsAmount = theValue
       .dividedBy(new BigNumber('1000000000000000000'))
       .toFixed();
-    return etherAmount;
+    return puffsAmount;
   };
 
   toBigNumber = v => {
@@ -31,7 +31,7 @@ class TxRow extends Component {
   }
 
   renderDetails() {
-    const { tx, etherPriceUSD } = this.props;
+    const { tx, puffsPriceUSD } = this.props;
 
     if (!this.state.showDetails) {
       return (
@@ -61,24 +61,24 @@ class TxRow extends Component {
       );
     }
 
-    const etherAmount = this.valueToEtherAmount(tx.value);
-    let etherAmountUSD;
-    if (tx.networkId === 420 && etherPriceUSD) {
-      etherAmountUSD = this.toBigNumber(etherAmount)
-        .times(new BigNumber(etherPriceUSD))
+    const puffsAmount = this.valueToPuffsAmount(tx.value);
+    let puffsAmountUSD;
+    if (tx.networkId === 420 && puffsPriceUSD) {
+      puffsAmountUSD = this.toBigNumber(puffsAmount)
+        .times(new BigNumber(puffsPriceUSD))
         .toFixed(2);
     }
-    const gasPriceEther = this.valueToEtherAmount(tx.gasPrice);
-    const gasPriceGwei = new BigNumber(gasPriceEther)
+    const gasPricePuffs = this.valueToPuffsAmount(tx.gasPrice);
+    const gasPriceGwei = new BigNumber(gasPricePuffs)
       .times(new BigNumber('1000000000'))
       .toFixed();
-    let txCostEther;
+    let txCostPuffs;
     let txCostUSD;
     if (tx.blockNumber) {
       const txCost = this.toBigNumber(tx.gasUsed)
         .times(this.toBigNumber(tx.gasPrice))
         .toFixed();
-      txCostEther = this.valueToEtherAmount(txCost);
+      txCostEther = this.valueToPuffsAmount(txCost);
       if (tx.networkId === 420 && etherPriceUSD > 0) {
         txCostUSD = this.toBigNumber(txCostEther)
           .times(new BigNumber(etherPriceUSD))
