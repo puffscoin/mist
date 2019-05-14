@@ -103,7 +103,7 @@ export function getPriceConversion() {
   return dispatch => {
     dispatch({ type: '[CLIENT]:GET_PRICE_CONVERSION:START' });
 
-    const url = `https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,EUR,GBP,BRL&extraParams=Mist-${
+    const url = `https://min-api.cryptocompare.com/data/price?fsym=PUFFS&tsyms=USD,EUR,GBP,BRL&extraParams=Mist-${
       mist.version
     }`;
 
