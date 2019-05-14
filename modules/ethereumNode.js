@@ -593,12 +593,12 @@ class EthereumNode extends EventEmitter {
       this.emit('nodeLog', cleanData);
     }
 
-    // check for geth startup errors
+    // check for gpuffs startup errors
     if (STATES.STARTING === this.state) {
       const dataStr = data.toString().toLowerCase();
-      if (nodeType === 'geth') {
+      if (nodeType === 'gpuffs') {
         if (dataStr.indexOf('fatal: error') >= 0) {
-          const error = new Error(`Geth error: ${dataStr}`);
+          const error = new Error(`Gpuffs error: ${dataStr}`);
 
           if (dataStr.indexOf('bind') >= 0) {
             error.tag = UNABLE_TO_BIND_PORT_ERROR;
