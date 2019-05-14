@@ -121,7 +121,7 @@ function renderReact() {
   // handle main window:
   if (!location.hash) {
     handleLanguage();
-    EthAccounts.init();
+    PuffsAccounts.init();
     initMist();
     renderReactComponentMain();
   } else {
@@ -149,7 +149,7 @@ Meteor.startup(function() {
           `numeral.js couldn't set number formating: ${err.message}`
         );
       }
-      EthTools.setLocale(lang);
+      PuffsTools.setLocale(lang);
     }
   });
 });
