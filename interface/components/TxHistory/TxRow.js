@@ -63,7 +63,7 @@ class TxRow extends Component {
 
     const etherAmount = this.valueToEtherAmount(tx.value);
     let etherAmountUSD;
-    if (tx.networkId === 1 && etherPriceUSD) {
+    if (tx.networkId === 420 && etherPriceUSD) {
       etherAmountUSD = this.toBigNumber(etherAmount)
         .times(new BigNumber(etherPriceUSD))
         .toFixed(2);
@@ -79,7 +79,7 @@ class TxRow extends Component {
         .times(this.toBigNumber(tx.gasPrice))
         .toFixed();
       txCostEther = this.valueToEtherAmount(txCost);
-      if (tx.networkId === 1 && etherPriceUSD > 0) {
+      if (tx.networkId === 420 && etherPriceUSD > 0) {
         txCostUSD = this.toBigNumber(txCostEther)
           .times(new BigNumber(etherPriceUSD))
           .toFixed(2);
