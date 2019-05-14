@@ -1,6 +1,6 @@
 PUFFScoin Wallet
 
-The PUFFScoin wallet, which allows you to create simple and multisig wallets to manage your ether.
+The PUFFScoin wallet, which allows you to create simple and multisig wallets to manage your PUFFScoins.
 
 The wallet contains its own node, but can also use an already running one, if the IPC path of that node is the standard path.
 (See below)
@@ -24,7 +24,7 @@ The nodes data is stored at:
 ## Issues
 
 If you find issues or have suggestion, please report them at  
-https://github.com/ethereum/meteor-dapp-wallet/issues
+https://github.com/puffscoin/meteor-dapp-wallet/issues
 
 ## Repository
 
