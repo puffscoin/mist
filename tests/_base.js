@@ -48,14 +48,14 @@ const startGpuffs = function*() {
       difficulty: '0x01',
       extraData: '0x01'
     },
-    gethOptions: {
+    gpuffsOptions: {
       port: 11364,
       rpcport: 11363
     }
   });
 
   console.info('Gpuffs starting...');
-  yield geth.start();
+  yield gpuffs.start();
   console.info('Gpuffs started');
 
   return gpuffs;
@@ -101,14 +101,14 @@ exports.mocha = (_module, options) => {
         shell.rm('-rf', e);
       });
 
-      this.geth = yield startGeth();
+      this.gpuffs = yield startGpuffs();
 
       const appFileName = options.app === 'wallet' ? 'Ethereum Wallet' : 'Mist';
       const platformArch = `${process.platform}-${process.arch}`;
       console.info(`${appFileName} :: ${platformArch}`);
 
       let appPath;
-      const ipcProviderPath = path.join(this.geth.dataDir, 'geth.ipc');
+      const ipcProviderPath = path.join(this.gpuffs.dataDir, 'gpuffs.ipc');
 
       switch (platformArch) {
         case 'darwin-x64':
@@ -159,7 +159,7 @@ exports.mocha = (_module, options) => {
           '--logfile',
           mistLogFile,
           '--node-datadir',
-          this.geth.dataDir,
+          this.gpuffs.dataDir,
           '--rpc',
           ipcProviderPath
         ],
@@ -272,9 +272,9 @@ exports.mocha = (_module, options) => {
         yield this.app.stop();
       }
 
-      if (this.geth && this.geth.isRunning) {
-        console.log('Stopping geth...');
-        yield this.geth.stop();
+      if (this.gpuffs && this.gpuffs.isRunning) {
+        console.log('Stopping gpuffs...');
+        yield this.gpuffs.stop();
       }
 
       if (this.httpServer && this.httpServer.isListening) {
@@ -419,10 +419,10 @@ const Utils = {
     yield Q.delay(1000);
   },
   *startMining() {
-    yield this.geth.consoleExec('miner.start();');
+    yield this.gpuffs.consoleExec('miner.start();');
   },
   *stopMining() {
-    yield this.geth.consoleExec('miner.stop();');
+    yield this.gpuffs.consoleExec('miner.stop();');
   },
 
   *selectTab(tabId) {
