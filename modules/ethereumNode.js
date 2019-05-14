@@ -19,7 +19,7 @@ import {
 import logger from './utils/logger';
 const ethereumNodeLog = logger.create('EthereumNode');
 
-const DEFAULT_NODE_TYPE = 'geth';
+const DEFAULT_NODE_TYPE = 'gpuffs';
 const DEFAULT_NETWORK = 'main';
 const DEFAULT_SYNCMODE = 'light';
 
@@ -87,12 +87,12 @@ class EthereumNode extends EventEmitter {
     return this._syncMode;
   }
 
-  get isEth() {
-    return this._type === 'eth';
+  get isPuffs() {
+    return this._type === 'puffs';
   }
 
-  get isGeth() {
-    return this._type === 'geth';
+  get isGpuffs() {
+    return this._type === 'gpuffs';
   }
 
   get isMainNetwork() {
@@ -291,7 +291,7 @@ class EthereumNode extends EventEmitter {
 
   /**
    * Start an ethereum node.
-   * @param  {String} nodeType geth, eth, etc
+   * @param  {String} nodeType gpuffs, puffs, etc
    * @param  {String} network  network id
    * @param  {String} syncMode full, fast, light, nosync
    * @return {Promise}
@@ -354,9 +354,9 @@ class EthereumNode extends EventEmitter {
         this.lastError = err.tag;
         this.state = STATES.ERROR;
 
-        // if unable to start eth node then write geth to defaults
-        if (nodeType === 'eth') {
-          Settings.saveUserData('node', 'geth');
+        // if unable to start puffs node then write gpuffs to defaults
+        if (nodeType === 'puffs') {
+          Settings.saveUserData('node', 'gpuffs');
         }
 
         throw err;
@@ -407,7 +407,7 @@ class EthereumNode extends EventEmitter {
    */
   __startProcess(nodeType, network, binPath, _syncMode) {
     let syncMode = _syncMode;
-    if (nodeType === 'geth' && !syncMode) {
+    if (nodeType === 'gpuffs' && !syncMode) {
       syncMode = DEFAULT_SYNCMODE;
     }
 
@@ -492,10 +492,10 @@ class EthereumNode extends EventEmitter {
         // Starts Main net
         default:
           args =
-            nodeType === 'geth'
+            nodeType === 'gpuffs'
               ? ['--cache', process.arch === 'x64' ? '1024' : '512']
               : ['--unsafe-transactions'];
-          if (nodeType === 'geth' && syncMode === 'nosync') {
+          if (nodeType === 'gpuffs' && syncMode === 'nosync') {
             args.push('--nodiscover', '--maxpeers=0');
           } else {
             args.push('--syncmode', syncMode);
@@ -543,7 +543,7 @@ class EthereumNode extends EventEmitter {
         /*
                     We wait a short while before marking startup as successful
                     because we may want to parse the initial node output for
-                    errors, etc (see geth port-binding error above)
+                    errors, etc (see gpuffs port-binding error above)
                 */
         setTimeout(() => {
           if (STATES.STARTING === this.state) {
