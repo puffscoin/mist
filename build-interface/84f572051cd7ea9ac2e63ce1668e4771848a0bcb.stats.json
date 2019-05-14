@@ -747,16 +747,16 @@
     "packages/mrt_jquery-ui-sortable.js": 37425,
     "packages/amplify.js": 8705,
     "packages/frozeman_persistent-minimongo.js": 2028,
-    "packages/ethereum_web3.js": 587949,
-    "packages/ethereum_accounts.js": 2832,
+    "packages/puffscoin_web3.js": 587949,
+    "packages/puffscoin_accounts.js": 2832,
     "packages/3stack_bignumber.js": 14969,
-    "packages/ethereum_tools.js": 4150,
+    "packages/puffscoin_tools.js": 4150,
     "packages/standard-minifiers.js": 38,
     "packages/alexvandesande_identicon.js": 1493,
     "packages/standard-minifier-css.js": 41,
     "packages/standard-minifier-js.js": 40,
-    "packages/ethereum_elements.js": 158927,
-    "packages/ethereum_dapp-styles.js": 40,
+    "packages/puffscoin_elements.js": 158927,
+    "packages/puffscoin_dapp-styles.js": 40,
     "packages/meteor-base.js": 31,
     "packages/mobile-experience.js": 37,
     "packages/blaze-html-templates.js": 40,
@@ -939,7 +939,7 @@
             "webviewEvents.js": 1598
           },
           "lib": {
-            "ethereum": {
+            "puffscoin": {
               "helpers": {
                 "helperFunctions.js": 2881,
                 "templateHelpers.js": 1335
