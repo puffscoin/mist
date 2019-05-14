@@ -527,14 +527,14 @@ let menuTempl = function(webviews) {
     const puffsClient = ClientBinaryManager.getClient('puffs');
     const gpuffsClient = ClientBinaryManager.getClient('gpuffs');
 
-    if (gethClient) {
+    if (gpuffsClient) {
       nodeSubmenu.push({
-        label: `Gpuffs ${gethClient.version}`,
+        label: `Gpuffs ${gpuffsClient.version}`,
         checked: ethereumNode.isOwnNode && ethereumNode.isGpuffs,
         enabled: ethereumNode.isOwnNode,
         type: 'checkbox',
         click() {
-          restartNode('geth', null, 'fast', webviews);
+          restartNode('gpuffs', null, 'fast', webviews);
         }
       });
     }
