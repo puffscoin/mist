@@ -73,7 +73,7 @@ class FeeSelector extends Component {
     const priceInWeiPriority = new BigNumber(gasPriceGweiPriority).times(
       1000000000
     );
-    const etherFee = priceInWeiPriority
+    const puffsFee = priceInWeiPriority
       .times(estimatedGas)
       .dividedBy(new BigNumber('1000000000000000000'));
 
@@ -82,7 +82,7 @@ class FeeSelector extends Component {
       const formattedFee = this.formatter.format(standardFee);
       return `${formattedFee} USD (${puffsFee} PUFFS)`;
     } else {
-      return `${etherFee} PUFFS`;
+      return `${puffsFee} PUFFS`;
     }
   }
 
