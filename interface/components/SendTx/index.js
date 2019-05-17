@@ -143,7 +143,7 @@ class SendTx extends Component {
             gasPriceGweiPriority={this.props.newTx.gasPriceGweiPriority}
             getGasPrice={this.getGasPrice}
             getGasUsage={this.estimateGasUsage}
-            etherPriceUSD={this.props.puffsPriceUSD}
+            puffsPriceUSD={this.props.puffsPriceUSD}
             network={this.props.network}
             priority={this.props.newTx.priority}
             togglePriority={this.togglePriority}
