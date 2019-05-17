@@ -78,10 +78,10 @@ class TxRow extends Component {
       const txCost = this.toBigNumber(tx.gasUsed)
         .times(this.toBigNumber(tx.gasPrice))
         .toFixed();
-      txCostEther = this.valueToPuffsAmount(txCost);
-      if (tx.networkId === 420 && etherPriceUSD > 0) {
-        txCostUSD = this.toBigNumber(txCostEther)
-          .times(new BigNumber(etherPriceUSD))
+      txCostPuffs = this.valueToPuffsAmount(txCost);
+      if (tx.networkId === 420 && puffsPriceUSD > 0) {
+        txCostUSD = this.toBigNumber(txCostPuffs)
+          .times(new BigNumber(puffsPriceUSD))
           .toFixed(2);
       }
     }
@@ -93,9 +93,9 @@ class TxRow extends Component {
           <span className="bold">{txHashLink}</span>
         </div>
         <div>
-          {i18n.t('mist.txHistory.etherAmount')}:{' '}
-          <span className="bold">{etherAmount} Ether</span>{' '}
-          {etherAmountUSD && <span> (${etherAmountUSD} USD)</span>}
+          {i18n.t('mist.txHistory.puffsAmount')}:{' '}
+          <span className="bold">{puffsAmount} Puffs</span>{' '}
+          {puffsAmountUSD && <span> (${etherAmountUSD} USD)</span>}
         </div>
         <div>
           {i18n.t('mist.txHistory.nonce')}:{' '}
@@ -115,13 +115,13 @@ class TxRow extends Component {
         )}
         <div>
           {i18n.t('mist.txHistory.gasPrice')}:{' '}
-          <span className="bold">{gasPriceEther} Ether</span> ({gasPriceGwei}{' '}
+          <span className="bold">{gasPricePuffs} Puffs</span> ({gasPriceGwei}{' '}
           Gwei)
         </div>
-        {txCostEther && (
+        {txCostPuffs && (
           <div>
             {i18n.t('mist.txHistory.txCost')}:{' '}
-            <span className="bold">{txCostEther} Ether</span>
+            <span className="bold">{txCostEther} Puffs</span>
             {txCostUSD && <span> (${txCostUSD} USD)</span>}
           </div>
         )}
@@ -166,8 +166,8 @@ class TxRow extends Component {
 
       description = 'Executed  “' + executionFunctionSentence + '” function';
     } else {
-      const etherAmount = this.valueToEtherAmount(tx.value);
-      description = `Sent ${etherAmount} Ether`;
+      const puffsAmount = this.valueToPuffsAmount(tx.value);
+      description = `Sent ${puffsAmount} Puffs`;
     }
 
     let status = (
