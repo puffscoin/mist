@@ -71,7 +71,7 @@ class ContextDescription extends Component {
           About {bytesCount} bytes
         </div>
 
-        {this.alertIfSendingEther()}
+        {this.alertIfSendingPuffs()}
       </div>
     );
   }
@@ -88,7 +88,7 @@ class ContextDescription extends Component {
       <div className="context-description__sentence">
         <span className="bold">{i18n.t('mist.sendTx.transfer')}</span>{' '}
         {tokenCount} {tokenSymbol}
-        {this.alertIfSendingEther()}
+        {this.alertIfSendingPuffs()}
       </div>
     );
   }
@@ -107,12 +107,12 @@ class ContextDescription extends Component {
         ) : (
           <React.Fragment>contract function</React.Fragment>
         )}
-        {this.alertIfSendingEther()}
+        {this.alertIfSendingPuffs()}
       </div>
     );
   }
 
-  renderEtherTransferDescription() {
+  renderPuffsTransferDescription() {
     let conversion;
     if (this.props.network === 'main') {
       const value = this.calculateTransferValue();
@@ -130,7 +130,7 @@ class ContextDescription extends Component {
     return (
       <div className="context-description__sentence">
         <div>
-          <span className="bold">Transfer</span> {this.formattedBalance()} Ether
+          <span className="bold">Transfer</span> {this.formattedBalance()} Puffs
         </div>
         <div className="context-description__subtext">{conversion}</div>
       </div>
@@ -146,10 +146,10 @@ class ContextDescription extends Component {
         return this.renderTokenTransferDescription();
       case 'genericFunctionExecution':
         return this.renderGenericFunctionDescription();
-      case 'etherTransfer':
-        return this.renderEtherTransferDescription();
+      case 'puffsTransfer':
+        return this.renderPuffsTransferDescription();
       default:
-        return this.renderEtherTransferDescription();
+        return this.renderPuffsTransferDescription();
     }
   }
 
@@ -176,7 +176,7 @@ function mapStateToProps(state) {
     isNewContract: state.newTx.isNewContract,
     network: state.nodes.network,
     params: state.newTx.params,
-    etherPriceUSD: state.settings.etherPriceUSD,
+    puffsPriceUSD: state.settings.puffsPriceUSD,
     toIsContract: state.newTx.toIsContract,
     value: state.newTx.value,
     token: state.newTx.token
