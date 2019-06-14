@@ -92,11 +92,11 @@ Helpers.formatUrl = function(url) {
     // if the url looks like a hash, add bzz
     url = 'bzz://' + url;
   } else if (!!url.match(/^([a-z]*:\/\/)?[^/]*\.eth(\/.*)?$/i)) {
-    // if uses .eth as a TLD
+    // if uses .puffs as a TLD
     url = 'bzz://' + url.replace(/^([a-z]*:\/\/)?/i, '');
   } else if (!!url.match(/^[^\.\/]*$/i)) {
     // doesn't have a protocol nor a TLD
-    url = 'bzz://' + url + '.eth';
+    url = 'bzz://' + url + '.puffs';
   } else if (url.indexOf('://') === -1) {
     // if it doesn't have a protocol
     url = 'http://' + url;
