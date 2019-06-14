@@ -91,7 +91,7 @@ Helpers.formatUrl = function(url) {
   if (url.length === 64 && !!url.match(/^[0-9a-f]+$/)) {
     // if the url looks like a hash, add bzz
     url = 'bzz://' + url;
-  } else if (!!url.match(/^([a-z]*:\/\/)?[^/]*\.eth(\/.*)?$/i)) {
+  } else if (!!url.match(/^([a-z]*:\/\/)?[^/]*\.puffs(\/.*)?$/i)) {
     // if uses .puffs as a TLD
     url = 'bzz://' + url.replace(/^([a-z]*:\/\/)?/i, '');
   } else if (!!url.match(/^[^\.\/]*$/i)) {
