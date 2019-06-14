@@ -52,7 +52,7 @@ export function estimateGasUsage() {
       txData.to = newTx.to;
     }
 
-    web3.eth
+    web3.puffs
       .estimateGas(txData)
       .then(value => {
         if (value > 8000000) {
@@ -174,7 +174,7 @@ export function determineIfContract(toAddress) {
       });
     }
 
-    web3.eth.getCode(toAddress, (error, res) => {
+    web3.puffs.getCode(toAddress, (error, res) => {
       if (error) {
         // TODO: handle error state
         dispatch({ type: '[CLIENT]:DETERMINE_IF_CONTRACT:FAILURE' });
@@ -212,14 +212,14 @@ export function confirmTx(data) {
       });
     }
 
-    const nonce = await web3.eth.getTransactionCount(data.from);
-    const networkId = await web3.eth.net.getId();
+    const nonce = await web3.puffs.getTransactionCount(data.from);
+    const networkId = await web3.puffs.net.getId();
     const tx = Object.assign({}, data, {
       nonce: `0x${nonce.toString(16)}`
     });
 
     let signedTx;
-    await web3.eth.personal.signTransaction(tx, data.pw || '', function(
+    await web3.puffs.personal.signTransaction(tx, data.pw || '', function(
       error,
       result
     ) {
@@ -256,7 +256,7 @@ export function confirmTx(data) {
       });
     }
 
-    web3.eth.sendSignedTransaction(signedTx, (error, hash) => {
+    web3.puffs.sendSignedTransaction(signedTx, (error, hash) => {
       if (error) {
         console.error(`Error from sendSignedTransaction: ${error}`);
         if (error.message.includes('Unable to connect to socket: timeout')) {
