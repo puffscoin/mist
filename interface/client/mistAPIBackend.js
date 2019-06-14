@@ -45,7 +45,7 @@ mistAPIBackend = function(event) {
     var tests = Tabs.findOne('tests');
 
     if (tests) {
-      web3.eth.getCoinbase(function(e, coinbase) {
+      web3.puffs.getCoinbase(function(e, coinbase) {
         webview.send('uiAction_sendTestData', tests.permissions, coinbase);
       });
     }
